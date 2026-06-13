@@ -1,4 +1,4 @@
-name,postcode,cuisine,mapUrl,websiteUrl,menuUrl,notes,recommended
-Crater Café,M00N,Lunar Bistro,https://map.of.the.moon,https://moon.moon.moon,https://moon.moon.moon/menu,,"Deep-fried Moon Cheese Curds
+name,postcode,city,province,cuisine,mapUrl,websiteUrl,menuUrl,notes,recommended
+Crater Café,M00N,Sea of Tranquility,Luna,Lunar Bistro,https://map.of.the.moon,https://moon.moon.moon,https://moon.moon.moon/menu,,"Deep-fried Moon Cheese Curds
 Sea of Tranquili-Tea
 Freeze Dried Ice Cream"

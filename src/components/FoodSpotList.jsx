@@ -31,6 +31,8 @@ function FoodSpotList({ searchQuery }) {
       ...r,
       n_name: normalizeText(r.name ?? ''),
       n_cuisine: normalizeText(r.cuisine ?? ''),
+      n_city: normalizeText(r.city ?? ''),
+      n_province: normalizeText(r.province ?? ''),
       n_notes: normalizeText(r.notes ?? ''),
       n_recommended: normalizeText((r.recommended ?? []).join(' '))
     }));
@@ -38,7 +40,7 @@ function FoodSpotList({ searchQuery }) {
 
   const fuse = useMemo(() => {
     return new Fuse(normalizedFoodSpots, {
-      keys: ['n_name', 'n_cuisine', 'n_notes', 'n_recommended'],
+      keys: ['n_name', 'n_cuisine', 'n_city', 'n_province','n_notes', 'n_recommended'],
       threshold: 0.3,
       includeScore: true,
       includeMatches: true,
@@ -70,18 +72,18 @@ function FoodSpotList({ searchQuery }) {
                   <Card.Subtitle className='mb-2'>
                     {foodSpot.cuisine}
                   </Card.Subtitle>
-                  <Card.Text>
-                    <strong>Postcode:</strong> {foodSpot.postcode}
-                  </Card.Text>
+                  {/* <Card.Text>
+                    <strong>Location:</strong> {foodSpot.city}, {foodSpot.province}, {foodSpot.postcode}
+                  </Card.Text> */}
 
-                  {foodSpot.mapUrl && (
+                  {/* {foodSpot.mapUrl && (
                     <Card.Text>
                       📍
                       <a href={foodSpot.mapUrl} target="_blank" rel="noopener noreferrer">
-                        Map
+                        {foodSpot.city}, {foodSpot.province}, {foodSpot.postcode}
                       </a>
                     </Card.Text>
-                  )}
+                  )} */}
 
                   {foodSpot.websiteUrl && (
                     <Card.Text>
@@ -97,6 +99,15 @@ function FoodSpotList({ searchQuery }) {
                       📗
                       <a href={foodSpot.menuUrl} target="_blank" rel="noopener noreferrer">
                         Menu
+                      </a>
+                    </Card.Text>
+                  )}
+
+                  {foodSpot.mapUrl && (
+                    <Card.Text>
+                      📍
+                      <a href={foodSpot.mapUrl} target="_blank" rel="noopener noreferrer">
+                        {foodSpot.city}, {foodSpot.province}, {foodSpot.postcode}
                       </a>
                     </Card.Text>
                   )}

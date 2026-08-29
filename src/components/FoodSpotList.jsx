@@ -40,7 +40,7 @@ function FoodSpotList({ searchQuery }) {
 
   const fuse = useMemo(() => {
     return new Fuse(normalizedFoodSpots, {
-      keys: ['n_name', 'n_cuisine', 'n_city', 'n_province','n_notes', 'n_recommended'],
+      keys: ['n_name', 'n_cuisine', 'n_city', 'n_province', 'n_notes', 'n_recommended'],
       threshold: 0.3,
       includeScore: true,
       includeMatches: true,
@@ -107,7 +107,9 @@ function FoodSpotList({ searchQuery }) {
                     <Card.Text>
                       📍
                       <a href={foodSpot.mapUrl} target="_blank" rel="noopener noreferrer">
-                        {foodSpot.city}, {foodSpot.province}, {foodSpot.postcode}
+                        {[foodSpot.city, foodSpot.province, foodSpot.postcode]
+                          .filter(value => value?.trim())
+                          .join(', ')}
                       </a>
                     </Card.Text>
                   )}

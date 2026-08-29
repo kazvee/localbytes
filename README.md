@@ -1,5 +1,10 @@
 # Local Bytes 🍔
-✨ [LIVE DEMO](https://localbytes.kazvee.com/) ✨
+
+## ⚠️ Project Status
+
+This project is no longer under active development and is not currently maintained.
+
+✨ [LIVE DEMO](https://kazvee.github.io/localbytes) ✨
 
 ## Description & Use Case
 Local Bytes is a lightweight, responsive food discovery app. Search by dish or cuisine to discover recommended items across a variety of food spots, including restaurants, bakeries, grocery stores, and more!
